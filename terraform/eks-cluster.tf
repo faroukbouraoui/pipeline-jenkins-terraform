@@ -15,8 +15,13 @@ module "eks" {
         environment = "development"
         application = "myapp"
     }
-
+    iam_role_additional_policies ={
+            role = "arn:aws:iam::809977396697:role/LabRole"
+        }
     eks_managed_node_groups = {
+        iam_role_additional_policies ={
+            role = "arn:aws:iam::809977396697:role/LabRole"
+        }
         dev = {
             min_size = 1
             max_size = 3
