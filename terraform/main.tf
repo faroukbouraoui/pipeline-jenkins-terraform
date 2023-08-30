@@ -11,7 +11,7 @@ resource "aws_eks_cluster" "eks_cluster" {
   role_arn = "arn:aws:iam::809977396697:role/LabRole"
   
   vpc_config {
-    subnet_ids = ["subnet-03cc6e0857381f7b6"]
+    subnet_ids = ["subnet-0d3889b6a27bd0458"]
   }
 
   depends_on = []
@@ -22,7 +22,7 @@ resource "aws_eks_node_group" "eks_nodes" {
   node_group_name = "nodes"
   node_role_arn   = "arn:aws:iam::809977396697:role/LabRole"
 
-  subnet_ids = ["subnet-03cc6e0857381f7b6"]
+  subnet_ids = ["subnet-0d3889b6a27bd0458"]
 
   scaling_config {
     desired_size = 2
